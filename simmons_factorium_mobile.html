@@ -111,45 +111,44 @@ html, body { width: 100%; background: #fff; font-family: Arial, sans-serif; }
 /* 약도 */
 .map-wrap {
   margin: 3vw 5vw 6vw;
-  height: 36vw;
-  background: #f4f4f4;
+}
+.map-btn {
+  display: block;
+  width: 100%;
+  padding: 4.5vw 0;
+  background: #03C75A;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 4vw;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
   border-radius: 6px;
-  position: relative;
-  overflow: hidden;
+  letter-spacing: 0.5px;
 }
-.road-v { position: absolute; left: 44%; top: 0; bottom: 0; width: 4%; background: #ccc; }
-.road-v-line { position: absolute; left: calc(44% + 2%); top: 0; bottom: 0; width: 1px; background: #fff; }
-.road-h { position: absolute; left: 0; right: 0; top: 52%; height: 10%; background: #ccc; }
-.road-h-line { position: absolute; left: 0; right: 0; top: 57%; height: 1px; background: #fff; }
-
-.map-parking {
-  position: absolute; left: 4%; top: 12%;
-  width: 36%; height: 34%;
-  background: #111; border-radius: 4px;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
+.map-btn-sub {
+  display: block;
+  width: 100%;
+  padding: 3.5vw 0;
+  margin-top: 2.5vw;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  color: #111;
+  font-family: Arial, sans-serif;
+  font-size: 3.5vw;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
 }
-.map-parking-t { font-size: 2.8vw; font-weight: 700; color: #fff; }
-.map-parking-s { font-size: 2.2vw; color: #bbb; margin-top: 0.5vw; }
-
-.map-factory {
-  position: absolute; right: 3%; top: 12%;
-  width: 36%; height: 34%;
-  background: #fff; border: 2px solid #111; border-radius: 4px;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-}
-.map-factory-t { font-size: 2.8vw; font-weight: 700; color: #111; }
-.map-factory-s { font-size: 2.2vw; color: #555; margin-top: 0.5vw; }
-
-.map-arrow { position: absolute; left: 41%; top: 22%; font-size: 4vw; font-weight: 700; color: #111; }
-.map-badge {
-  position: absolute; left: 50%; top: 68%;
-  transform: translateX(-50%);
-  background: #111; color: #fff;
-  font-size: 2.5vw; font-weight: 700;
-  padding: 1vw 4vw; border-radius: 20px;
-  white-space: nowrap;
+.map-info {
+  margin-top: 3vw;
+  padding: 3vw 4vw;
+  background: #f8f8f8;
+  border-radius: 6px;
+  font-size: 3vw;
+  color: #555;
+  line-height: 1.8;
 }
 
 .bottom-bar { height: 1.5vw; max-height: 8px; background: #111; }
@@ -228,18 +227,17 @@ html, body { width: 100%; background: #fff; font-family: Arial, sans-serif; }
 
   <div class="sec-head"><div class="sec-label">MAP</div><div class="sec-line"></div></div>
   <div class="map-wrap">
-    <div class="road-v"></div><div class="road-v-line"></div>
-    <div class="road-h"></div><div class="road-h-line"></div>
-    <div class="map-parking">
-      <div class="map-parking-t">이천 테르메덴</div>
-      <div class="map-parking-s">주차장 (P)</div>
+    <a class="map-btn" href="naver-maps://route/walk?slat=37.24451&slng=127.44038&sname=이천%20테르메덴%20주차장&dlat=37.24298&dlng=127.43756&dname=시몬스%20이천%20팩토리움&appname=simmons.tour" onclick="if(!navigator.userAgent.match(/iPhone|Android/i)){window.open('https://map.naver.com/p/directions/14188308.5961,4482020.4762,이천%20테르메덴%20주차장,, /14187974.6,4481808.6,시몬스%20이천%20팩토리움,,/walk','_blank');return false;}">
+      🗺 네이버 지도로 길찾기
+    </a>
+    <a class="map-btn-sub" href="https://map.kakao.com/?from=이천%20테르메덴%20주차장&to=시몬스%20이천%20팩토리움&via=&ids=,,&types=,," target="_blank">
+      카카오맵으로 길찾기
+    </a>
+    <div class="map-info">
+      📍 출발 : 이천 테르메덴 주차장<br>
+      📍 도착 : 시몬스 팩토리움 2층 대강당<br>
+      🚶 도보 약 5분
     </div>
-    <div class="map-factory">
-      <div class="map-factory-t">시몬스 팩토리움</div>
-      <div class="map-factory-s">2층 대강당 집결</div>
-    </div>
-    <div class="map-arrow">→</div>
-    <div class="map-badge">도보 약 5분</div>
   </div>
 
   <div class="bottom-bar"></div>
